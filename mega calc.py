@@ -13,22 +13,7 @@ def menu():
 
 
 
-# test
-
-    # print("""
-         
-         
-    #       ___________
-    #       1 for math
-         
-         
-         
-         
-         
-         
-         
-    #       """)
-
+    #dad?
 
     calcChoice = int(input("What Kind of calc do you want "))
     print()
