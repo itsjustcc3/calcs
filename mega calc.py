@@ -278,7 +278,8 @@ def tax():
         print()
         sTaxRate = float(input("What is the sales tax rate? "))
         sTaxPercent = float(input("What is the sales tax percentage? "))        
-def hypixl():
+def hypixel():
+    #vincents a hoe
     while True:
         chance = float(input("what is the original dropchance "))
         magicfind = float(input("what is your magic find just the number"))
@@ -321,6 +322,8 @@ while True:
         trig()
     if calcChoice == 7:
         tax()
+    if calcChoice == 8:
+        hypixel()
         print("not finished")
     if calcChoice == 0:
         sys.exit(0)
