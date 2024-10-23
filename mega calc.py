@@ -7,7 +7,7 @@ def menu():
     print("         menu")
     print("_______________________")
     print("|                     |")
-    print("|   1 for math        |\n|   2 for grade       |\n|   3 for percent     |\n|   4 for geometric   |\n|   5 for algebraic   |\n|   6 for Trigimetric | \n|   7 for Tax         |\n|   0 to stop         |")
+    print("|   1 for math        |\n|   2 for grade       |\n|   3 for percent     |\n|   4 for geometric   |\n|   5 for algebraic   |\n|   6 for Trigimetric | \n|   7 for Tax         |\n|   8 for hypixel     |\n|   0 to stop         |")
     print("_______________________")
 
 
@@ -278,6 +278,32 @@ def tax():
         print()
         sTaxRate = float(input("What is the sales tax rate? "))
         sTaxPercent = float(input("What is the sales tax percentage? "))        
+def hypixl():
+    while True:
+        chance = float(input("what is the original dropchance "))
+        magicfind = float(input("what is your magic find just the number"))
+        chance = chance * (1+(magicfind/100)/100)
+
+        print (f"""
+
+            =====================================
+            |                                   |
+            |                                   |
+            |      Chance: {chance:.02}                  |
+            |                                   |
+            |                                   |
+            =====================================
+
+
+
+            """)
+        choice = input("do you want another calculation y/n ")
+        if choice == "n":
+            print("Stopping....")
+            sys.exit(0)
+        else:
+            print("Ok running program again...")
+
 calcChoice = menu()
 while True:
     if calcChoice == 1:
