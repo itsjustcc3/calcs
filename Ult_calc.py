@@ -4,18 +4,19 @@ import math
 import time
 # Declare pi as global variable
 pi = math.pi
+# Define a menu to call other functions from
 def menu():
     print("         menu")
     print("_______________________")
     print("|                     |")
-    print("|   1 for math        |\n|   2 for grade       |\n|   3 for percent     |\n|   4 for geometric   |\n|   5 for algebraic   |\n|   6 for Trigimetric | \n|   7 for Tax         |\n|   8 for hypixel     |\n|   0 to stop         |")
+    print("|   1 for math        |\n|   2 for grade       |\n|   3 for percent     |\n|   4 for geometric   |\n|   5 for algebraic   |\n|   6 for Trigimetric |\n|   7 for fincial     |\n|   8 for hypixel     |\n|   0 to stop         |")
     print("_______________________")
 
 
 
     calcChoice = int(input("What Kind of calc do you want "))
-    print()
-    return calcChoice
+    print("\n\n\n")
+    return calcChoice # This is how we pull calcChoice out of the function
 def math_():
     choice = int(input("how many numbers? "))
     choices = []
@@ -53,7 +54,7 @@ def grade():
     tpoints = (float(input("Out of how many points ")))
     precent = points / tpoints * 100
     print("___________________")
-    print("|    %",precent,"          |")
+    print(f"|    %{precent:.2f}          |")
     if precent >= 97:
         print("|       A+        |")
     elif precent >= 93:
@@ -214,21 +215,21 @@ def algebraic():
     choice = int(input("What type of problem "))
     if choice == 1:
         print()
-        constants = (float(input("What are the constants ")))
+        constants = float(input("What are the constants "))
         variables = input("What are the variables ")
        
         # step if x in string
-       
+    
         # step 2 find index of x
 
 
-        # step 3 extract value to the  left of x
+        # step 3 extract value to the left of x
        
 
 
 
 
-        coefficent = float(input("What are the coefficents "))      
+        # coefficent = float(input("What are the coefficents "))      
 def trig():
     # Ahcene Amara - trig function
     print()
@@ -271,22 +272,16 @@ def trig():
         adj = int(input("what is the number adjacetent to the theta"))
         tan = opp/adj
         cot= 1/tan
-def tax():
+def fincial():
     print("_______________________")
-    print("1 for sales tax\n2 for future value")
-    choice = int(input("What type of calc do want "))
+    print("1 for Stock dividend rate")    
+    choice = input("What kind of problem")
     if choice == 1:
-        print()
-        sTaxRate = float(input("What is the sales tax rate? "))
-        sTaxPercent = float(input("What is the sales tax percentage? ")) 
-    if choice == 2:
-        print()
         print("_______________________")
-        pv = int(input("What is the present value? "))
-        rate = int(input("What is the annual intrest rate "))
-        years = int(input("How many years "))
-        fv = pv * (1 + rate)**years
-        print("Future value: ",fv)
+        stockPrice = float(input("What is the stock price "))
+        dividendYield = float(input("What is the dividend yield "))
+        answer = dividendYield/stockPrice * 100
+        print("Answer: ",answer)
 def hypixel():
     #vincents a hoe
     while True:
@@ -299,7 +294,7 @@ def hypixel():
             =====================================
             |                                   |
             |                                   |
-            |      Chance: {chance:.02}                  |
+            |      Chance: {chance:.02f}               |
             |                                   |
             |                                   |
             =====================================
@@ -312,7 +307,7 @@ def hypixel():
             print("Stopping....")
             sys.exit(0)
         else:
-            print("Ok running program again...")
+            print("running program again...")
 
 calcChoice = menu()
 while True:
@@ -330,13 +325,12 @@ while True:
     if calcChoice == 6:
         trig()
     if calcChoice == 7:
-        tax()
+        fincial()
     if calcChoice == 8:
         hypixel()
-        print("not finished")
     if calcChoice == 0:
         sys.exit(0)
     if calcChoice < 0 or calcChoice > 8:
-        print("Please input correctly ")
+        print("Please enter correctly")
     time.sleep(5)
     calcChoice = menu()
